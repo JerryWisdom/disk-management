@@ -2,11 +2,11 @@
 #include "cd.h"
 #include "file_operate.h"
 #include "data_operate.h"
-#include "info_show.h"
+//#include "info_show.h"
 
 Dvd *menuSelect(Dvd *head,char **vipList);
-                                //Ö÷³ÌĞò²Ëµ¥Ñ¡Ôñº¯Êı
-void Quit(Dvd *head);           //Àë¿ªº¯Êı
+                                //ä¸»ç¨‹åºèœå•é€‰æ‹©å‡½æ•°
+void Quit(Dvd *head);           //ç¦»å¼€å‡½æ•°
 
 int main()
 {
@@ -14,9 +14,9 @@ int main()
     char vipList[20][20] = {""};
 
     printf("\t\t\t* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
-    printf("\t\t\t* * * * * * * * * * Ó° µú ĞÅ Ï¢ ¹Ü Àí Ïµ Í³ * * * * * * * * * *\n");
-    printf("\t\t\t* * * * * * * * * * * * * ×é ³¤ £º Ñî ¿É * * * * * * * * * * * * \n");
-    printf("\t\t\t* * * * * * * ×é Ô± £º ÈÄ ÖÇ ¡¢ Ğì ½¨ íµ ¡¢ À¶ ¿­ ºÀ * * * * * * \n");
+    printf("\t\t\t* * * * * * * * * * å½± ç¢Ÿ ä¿¡ æ¯ ç®¡ ç† ç³» ç»Ÿ * * * * * * * * * *\n");
+    printf("\t\t\t* * * * * * * * * * * * * ç»„ é•¿ ï¼š æ¨ å¯ * * * * * * * * * * * * \n");
+    printf("\t\t\t* * * * * * * ç»„ å‘˜ ï¼š é¥¶ æ™º ã€ å¾ å»º æ·¼ ã€ è“ å‡¯ è±ª * * * * * * \n");
     printf("\t\t\t* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\n");
 
     while(1)
@@ -33,81 +33,81 @@ int main()
 
 Dvd *menuSelect(Dvd *head,char **vipList)
 {
-    int choice;              //Ñ¡Ôñ²Ù×÷
-    Dvd *pnew;               //±£´æĞÂÓ°µú½ÚµãĞÅÏ¢
+    int choice;              //é€‰æ‹©æ“ä½œ
+    Dvd *pnew;               //ä¿å­˜æ–°å½±ç¢ŸèŠ‚ç‚¹ä¿¡æ¯
 
-    printf("\n\t\t\t\t\t------------Ó°µúĞÅÏ¢¹ÜÀíÏµÍ³------------\n\n");
-    printf("\t\t\t\t[ 1 ] \t\t     Ó° µú ĞÅ Ï¢ Â¼ Èë\n\n");
-    printf("\t\t\t\t[ 2 ] \t\t     »á Ô± ĞÅ Ï¢ Â¼ Èë\n\n");
-    printf("\t\t\t\t[ 3 ] \t\t     Ôö ¼Ó »á Ô± Êı Á¿\n\n");
-    printf("\t\t\t\t[ 4 ] \t\t ĞÂ Æ· ÉÏ ¼Ü £¬ Ìí ¼Ó µú Æ¬\n\n");
-    printf("\t\t\t\t[ 5 ] \t\t       ²é Ñ¯ µú Æ¬\n\n");
-    printf("\t\t\t\t[ 6 ] \t\t       Ó° µú ½è ÔÄ\n\n");
-    printf("\t\t\t\t[ 7 ] \t\t       Ó° µú ¹é »¹\n\n");
-    printf("\t\t\t\t[ 8 ] \t\t  ä¯ ÀÀ Ëù ÓĞ Ó° µú ĞÅ Ï¢\n\n");
+    printf("\n\t\t\t\t\t------------å½±ç¢Ÿä¿¡æ¯ç®¡ç†ç³»ç»Ÿ------------\n\n");
+    printf("\t\t\t\t[ 1 ] \t\t     å½± ç¢Ÿ ä¿¡ æ¯ å½• å…¥\n\n");
+    printf("\t\t\t\t[ 2 ] \t\t     ä¼š å‘˜ ä¿¡ æ¯ å½• å…¥\n\n");
+    printf("\t\t\t\t[ 3 ] \t\t     å¢ åŠ  ä¼š å‘˜ æ•° é‡\n\n");
+    printf("\t\t\t\t[ 4 ] \t\t æ–° å“ ä¸Š æ¶ ï¼Œ æ·» åŠ  ç¢Ÿ ç‰‡\n\n");
+    printf("\t\t\t\t[ 5 ] \t\t       æŸ¥ è¯¢ ç¢Ÿ ç‰‡\n\n");
+    printf("\t\t\t\t[ 6 ] \t\t       å½± ç¢Ÿ å€Ÿ é˜…\n\n");
+    printf("\t\t\t\t[ 7 ] \t\t       å½± ç¢Ÿ å½’ è¿˜\n\n");
+    printf("\t\t\t\t[ 8 ] \t\t  æµ è§ˆ æ‰€ æœ‰ å½± ç¢Ÿ ä¿¡ æ¯\n\n");
     printf(
-           "\t\t\t\t[ 9 ] \t\t  Ó° µú ĞÅ Ï¢ Â¼ Èë ÎÄ ¼ş\n\n");
-    printf("\t\t\t\t[ 10 ] \t\t       Àë ¿ª Ïµ Í³\n\n");
-    printf("\t\t\t\tÇëÊäÈëÏàÓ¦²Ù×÷ĞòºÅ:");
+           "\t\t\t\t[ 9 ] \t\t  å½± ç¢Ÿ ä¿¡ æ¯ å½• å…¥ æ–‡ ä»¶\n\n");
+    printf("\t\t\t\t[ 10 ] \t\t       ç¦» å¼€ ç³» ç»Ÿ\n\n");
+    printf("\t\t\t\tè¯·è¾“å…¥ç›¸åº”æ“ä½œåºå·:");
     scanf("%d",&choice);
     system("cls");
     switch(choice)
     {
         case 1:
-            //³õÊ¼»¯Â¼ÈëÓ°Æ¬
+            //åˆå§‹åŒ–å½•å…¥å½±ç‰‡
             head = createLine(head);
             break;
         case 2:
-            //³õÊ¼»¯»áÔ±ÁĞ±í
+            //åˆå§‹åŒ–ä¼šå‘˜åˆ—è¡¨
             vipNameLeading(vipList);
             break;
         case 3:
-            //Ìí¼ÓĞÂ»áÔ±
+            //æ·»åŠ æ–°ä¼šå‘˜
             vipNameAdd(vipList);
             break;
         case 4:
-            //×·¼ÓÓ°Æ¬ĞÅÏ¢
+            //è¿½åŠ å½±ç‰‡ä¿¡æ¯
             head = addRecord(head);
             break;
         case 5:
-            //²éÑ¯Ó°Æ¬ĞÅÏ¢
+            //æŸ¥è¯¢å½±ç‰‡ä¿¡æ¯
             searchDvdInfo(head);
             break;
         case 6:
-            //½èÔÄÓ°Æ¬
+            //å€Ÿé˜…å½±ç‰‡
             head = dvdBorrow(head,vipList);
             break;
         case 7:
-            //¹é»¹Ó°Æ¬
+            //å½’è¿˜å½±ç‰‡
             head = dvdReturn(head);
             break;
         case 8:
-            //ä¯ÀÀËùÓĞÓ°Æ¬ĞÅÏ¢
+            //æµè§ˆæ‰€æœ‰å½±ç‰‡ä¿¡æ¯
             display(head);
             break;
         case 9:
-            //½«ĞÅÏ¢´æÈëÎÄ¼ş
+            //å°†ä¿¡æ¯å­˜å…¥æ–‡ä»¶
             if(saveRecord(head) == SUCCESS)
             {
-                printf("\n\t\t\t\tÎÄ¼ş±£´æ³É¹¦£¡\n\n");
+                printf("\n\t\t\t\tæ–‡ä»¶ä¿å­˜æˆåŠŸï¼\n\n");
             }
             else
             {
-                printf("\n\t\t\t\t¶Ô²»Æğ£¬ÎÄ¼ş±£´æÊ§°Ü!\n\n");
+                printf("\n\t\t\t\tå¯¹ä¸èµ·ï¼Œæ–‡ä»¶ä¿å­˜å¤±è´¥!\n\n");
             }
             break;
         case 10:
-            //Àë¿ªÏµÍ³
+            //ç¦»å¼€ç³»ç»Ÿ
             Quit(head);
             break;
         default:
-            printf("\n\t\t\t\t¶Ô²»Æğ£¬ÄúÊäÈëµÄ²Ù×÷ÊıÓĞÎó!\n\n");
+            printf("\n\t\t\t\tå¯¹ä¸èµ·ï¼Œæ‚¨è¾“å…¥çš„æ“ä½œæ•°æœ‰è¯¯!\n\n");
     }
     return head;
 }
 
 void Quit(Dvd *head){
     freeLine(head);
-    printf("\n\t\t\t\t¹Ø ±Õ Ïµ Í³ ......");
+    printf("\n\t\t\t\tå…³ é—­ ç³» ç»Ÿ ......");
     exit(0);
 }
