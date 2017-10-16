@@ -1,5 +1,0 @@
-#ifndef INFO_SHOW_H_INCLUDED
-#define INFO_SHOW_H_INCLUDED
-
-
-#endif // INFO_SHOW_H_INCLUDED
