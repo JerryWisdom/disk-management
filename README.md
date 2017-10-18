@@ -1,5 +1,6 @@
 # disk-management
-There are still some functions left unfinished: 
+There are still some functions left unfinished:</br>   
+
 1.所有输出格式统一对齐</br>  
 
 2.普通用户和管理员（有录入碟片的特权，同一个影片录入一定数量）</br>    
